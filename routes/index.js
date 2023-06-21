@@ -39,6 +39,7 @@ router.post('/order', async (req, res) => {
   var id = req.body.id;
   var toys = await ToyModels.findById(id);
   var order_quantity = req.body.order_quantity;
+  var price = req.body.price;
   var total_price = price * order_quantity;
   res.render('order_confirm', { toys: toys, order_quantity : order_quantity, total_price : total_price});
 })

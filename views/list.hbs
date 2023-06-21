@@ -1,29 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<!-- divinectorweb.com -->
 
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Responsive Product Card bootstrap 5</title>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css">
-   <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-   {{#each toys }}
-   <div class="products">
-      <div class="container">
-         <div class="row card-deck">
-            <div class="col-lg-4">
-               <div class="card">
-                  <img src="{{ image }}" class="card-img-top" alt="Product 1">
-                  <div class="card-body">
-                     <h5 class="name">{{ name }}</h5>
-                     <p class="card-text">{{ detail }}</p>
+{{#each toys }}
+<section style="background-color: #eee;" >
+   <div class="container py-5" >
+      <div class="row " >
+         <div class="col-md-12 col-lg-4 mb-4 mb-lg-0" >
+            <div class="card text-black">
+               <img src="{{image}}" class="card-img-top" alt="..." />
+               <div class="card-body">
+                  <div class="text-center mt-1">
+                     <h4 class="card-title">{{name}}</h4>
+                     <h6 class="text-primary mb-1 pb-3">${{price}}</h6>
+                  </div>
+                  <div class="text-center">
+                     <div class="d-flex flex-column mb-4">
+                        <span class="h1 mb-0">
+                           <i class="fas fa-camera-retro"></i>
+                        </span>
+                        <ul class="list-unstyled mb-0">
+                           <li aria-hidden="true">—</li>
+                           <li>{{brand}}</li>
+                           <li>{{detail}}</li>
+                           <li aria-hidden="true">—</li>
+                        </ul>
+                     </div>
+                  </div>
                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
+                        <div class="btn btn-danger flex-fill ms-1">
                            <form action="/order" method="post">
                               <input type="hidden" name="name" value="{{name}}">
                               <input type="hidden" name="price" value="{{price}}">
@@ -32,14 +34,11 @@
                               <input class="btn btn-danger" type="submit" value="Order">
                            </form>
                         </div>
-                        <span class="price">${{ price }}</span>
                      </div>
-                  </div>
                </div>
             </div>
          </div>
       </div>
-      {{/each}}
-</body>
-
-</html>
+   </div>
+</section>
+{{/each}}
