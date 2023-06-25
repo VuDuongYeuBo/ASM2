@@ -57,21 +57,23 @@
                <thead>
                   <tr>
                      <th>Name</th>
-                     <th>Brand</th>
+                     <th>Brand </th>
                      <th>Detail</th>
                      <th>Quantity</th>
+                     <th> Date </th>
                      <th>Image</th>
                      <th>Price</th>
                      <th>Video</th>
                   </tr>
                </thead>
                <tbody>
-                  {{#each toys }}
+                  {{#each toys2 }}
                   <tr>
                      <th>{{ name }}</th>
                      <th>{{ brand }}</th>
                      <th>{{ detail }}</th>
                      <th>{{ quantity }}</th>
+                     <th> {{date}} </th>
                      <th>
                         <img width="300" height="200" src="{{ image }}">
                      </th>
